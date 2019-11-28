@@ -1,0 +1,7 @@
+django
+celery
+
+pip install django-cors-headers
+django_redis
+requests
+requests_toolbelt

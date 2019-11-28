@@ -1,0 +1,53 @@
+[2019-11-27 17:16:04,091: WARNING/ForkPoolWorker-2] file_path: /home/zheng/桌面/aaa着色版.docx
+[2019-11-27 17:16:04,095: INFO/ForkPoolWorker-2] Task transform.tasks.transform_local[2df9e8ec-cb94-4f8b-9509-67837eb22903] succeeded in 4.275608702999762s: 'file_path: /home/zheng/桌面/aaa着色版.docx
+'
+[2019-11-27 17:16:36,000: INFO/ForkPoolWorker-2] Task transform.tasks.transform_local[e81a97e7-c8db-4034-9b6a-81c509fe3ace] succeeded in 0.03758425599971815s: 'file_path:/home/zheng/桌面/resule.txt'
+[2019-11-27 17:25:13,450: INFO/ForkPoolWorker-2] Task transform.tasks.transform_local[35e196cc-f8a0-4405-9615-4667152aeecb] succeeded in 0.007028130999970017s: 'file_path:/home/zheng/桌面/resule.txt'
+[2019-11-27 17:39:19,263: INFO/ForkPoolWorker-2] Task transform.tasks.transform_local[bae02b5c-910d-4044-a57d-ff8133f3b355] succeeded in 0.008564422999825183s: 'file_path:/home/zheng/桌面/resule.txt'
+[2019-11-27 17:40:01,451: INFO/ForkPoolWorker-2] Task transform.tasks.transform_local[ed9b1f8d-a9c7-47aa-afc2-27d9eee2764f] succeeded in 1.8136453090000941s: ''
+[2019-11-27 17:41:41,578: WARNING/ForkPoolWorker-2] /home/zheng/anaconda2/envs/tf/lib/python3.6/site-packages/celery/app/trace.py:568: RuntimeWarning: Exception raised outside body: ResponseError("Command # 1 (SETEX b'celery-task-meta-0e824adc-2253-4ddb-8b5b-91cf57c908e9' 86400 b'\\x80\\x02}q\\x00(X\\x06\\x00\\x00\\x00statusq\\x01X\\x07\\x00\\x00\\x00SUCCESSq\\x02X\\x06\\x00\\x00\\x00resultq\\x03X\\x00\\x00\\x00\\x00q\\x04X\\t\\x00\\x00\\x00tracebackq\\x05NX\\x08\\x00\\x00\\x00childrenq\\x06]q\\x07X\\x07\\x00\\x00\\x00task_idq\\x08X$\\x00\\x00\\x000e824adc-2253-4ddb-8b5b-91cf57c908e9q\\tX\\t\\x00\\x00\\x00date_doneq\\ncdatetime\\ndatetime\\nq\\x0bc_codecs\\nencode\\nq\\x0cX\\x0b\\x00\\x00\\x00\\x07\\xc3\\xa3\\x0b\\x1b\\x11))\\x08z|q\\rX\\x06\\x00\\x00\\x00latin1q\\x0e\\x86q\\x0fRq\\x10\\x85q\\x11Rq\\x12u.') of pipeline caused error: MISCONF Redis is configured to save RDB snapshots, but it is currently not able to persist on disk. Commands that may modify the data set are disabled, because this instance is configured to report errors during writes if RDB snapshotting fails (stop-writes-on-bgsave-error option). Please check the Redis logs for details about the RDB error.",):
+Traceback (most recent call last):
+  File "/home/zheng/anaconda2/envs/tf/lib/python3.6/site-packages/redis/client.py", line 3584, in _execute_transaction
+    response = self.parse_response(connection, '_')
+  File "/home/zheng/anaconda2/envs/tf/lib/python3.6/site-packages/redis/client.py", line 3650, in parse_response
+    self, connection, command_name, **options)
+  File "/home/zheng/anaconda2/envs/tf/lib/python3.6/site-packages/redis/client.py", line 853, in parse_response
+    response = connection.read_response()
+  File "/home/zheng/anaconda2/envs/tf/lib/python3.6/site-packages/redis/connection.py", line 718, in read_response
+    raise response
+redis.exceptions.ExecAbortError: Transaction discarded because of previous errors.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/zheng/anaconda2/envs/tf/lib/python3.6/site-packages/celery/app/trace.py", line 449, in trace_task
+    uuid, retval, task_request, publish_result,
+  File "/home/zheng/anaconda2/envs/tf/lib/python3.6/site-packages/celery/backends/base.py", line 149, in mark_as_done
+    self.store_result(task_id, result, state, request=request)
+  File "/home/zheng/anaconda2/envs/tf/lib/python3.6/site-packages/celery/backends/base.py", line 342, in store_result
+    request=request, **kwargs)
+  File "/home/zheng/anaconda2/envs/tf/lib/python3.6/site-packages/celery/backends/base.py", line 714, in _store_result
+    self.set(self.get_key_for_task(task_id), self.encode(meta))
+  File "/home/zheng/anaconda2/envs/tf/lib/python3.6/site-packages/celery/backends/redis.py", line 318, in set
+    return self.ensure(self._set, (key, value), **retry_policy)
+  File "/home/zheng/anaconda2/envs/tf/lib/python3.6/site-packages/celery/backends/redis.py", line 308, in ensure
+    **retry_policy)
+  File "/home/zheng/anaconda2/envs/tf/lib/python3.6/site-packages/kombu/utils/functional.py", line 343, in retry_over_time
+    return fun(*args, **kwargs)
+  File "/home/zheng/anaconda2/envs/tf/lib/python3.6/site-packages/celery/backends/redis.py", line 327, in _set
+    pipe.execute()
+  File "/home/zheng/anaconda2/envs/tf/lib/python3.6/site-packages/redis/client.py", line 3691, in execute
+    return execute(conn, stack, raise_on_error)
+  File "/home/zheng/anaconda2/envs/tf/lib/python3.6/site-packages/redis/client.py", line 3589, in _execute_transaction
+    raise errors[0][1]
+  File "/home/zheng/anaconda2/envs/tf/lib/python3.6/site-packages/redis/client.py", line 3576, in _execute_transaction
+    self.parse_response(connection, '_')
+  File "/home/zheng/anaconda2/envs/tf/lib/python3.6/site-packages/redis/client.py", line 3650, in parse_response
+    self, connection, command_name, **options)
+  File "/home/zheng/anaconda2/envs/tf/lib/python3.6/site-packages/redis/client.py", line 853, in parse_response
+    response = connection.read_response()
+  File "/home/zheng/anaconda2/envs/tf/lib/python3.6/site-packages/redis/connection.py", line 718, in read_response
+    raise response
+redis.exceptions.ResponseError: Command # 1 (SETEX b'celery-task-meta-0e824adc-2253-4ddb-8b5b-91cf57c908e9' 86400 b'\x80\x02}q\x00(X\x06\x00\x00\x00statusq\x01X\x07\x00\x00\x00SUCCESSq\x02X\x06\x00\x00\x00resultq\x03X\x00\x00\x00\x00q\x04X\t\x00\x00\x00tracebackq\x05NX\x08\x00\x00\x00childrenq\x06]q\x07X\x07\x00\x00\x00task_idq\x08X$\x00\x00\x000e824adc-2253-4ddb-8b5b-91cf57c908e9q\tX\t\x00\x00\x00date_doneq\ncdatetime\ndatetime\nq\x0bc_codecs\nencode\nq\x0cX\x0b\x00\x00\x00\x07\xc3\xa3\x0b\x1b\x11))\x08z|q\rX\x06\x00\x00\x00latin1q\x0e\x86q\x0fRq\x10\x85q\x11Rq\x12u.') of pipeline caused error: MISCONF Redis is configured to save RDB snapshots, but it is currently not able to persist on disk. Commands that may modify the data set are disabled, because this instance is configured to report errors during writes if RDB snapshotting fails (stop-writes-on-bgsave-error option). Please check the Redis logs for details about the RDB error.
+
+  exc, exc_info.traceback)))
